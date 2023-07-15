@@ -1,6 +1,13 @@
 import {tableHeaderConfig} from "@/config/table";
+import {TaskConfig} from "@/types";
+import React from "react";
+import Task from "@/app/components/Task";
 
-export default function ToDoList() {
+interface ToDoListProps {
+    tasks: TaskConfig[]
+}
+
+export const ToDoList: React.FC<ToDoListProps> = ({tasks}) => {
     return (
         <>
             <div className="">
@@ -13,10 +20,15 @@ export default function ToDoList() {
                     </tr>
                     </thead>
                     <tbody>
+                    {tasks.map((task) => (
+                        <Task key={task.id} task={task}/>
+                    ))}
 
                     </tbody>
                 </table>
             </div>
         </>
-    )
+    );
 }
+
+export default ToDoList;

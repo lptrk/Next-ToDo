@@ -1,0 +1,17 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "task": "Code a ToDo List App",
+      "status": "Not Done"
+    },{
+      "id": "2",
+      "task": "Buy Milk",
+      "status": "Not Done"
+    },{
+      "id": "3",
+      "task": "Link Project to Github",
+      "status": "Done"
+    }
+  ]
+}
