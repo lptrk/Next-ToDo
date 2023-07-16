@@ -2,18 +2,27 @@
 import Modal from "@/app/components/Modal";
 import React, {FormEventHandler, useState} from "react";
 import {addTask} from "@/api";
+import {useRouter} from "next/navigation";
+import {v4 as uuidv4} from 'uuid';
 
 export default function AddTask() {
+    const router = useRouter();
     const [modalOpen, setModalOpen] = useState<boolean>(false);
     const [newTaskValue, setNewTaskValue] = useState<string>('')
 
     const handleSubmitNewTask: FormEventHandler<HTMLFormElement> = async (e) => {
         e.preventDefault()
-        await addTask({
-            id: '6',
-            task: newTaskValue,
-            status: "Not Done",
-        })
+        if (newTaskValue != '') {
+            await addTask({
+                id: uuidv4(),
+                task: newTaskValue,
+                status: false ,
+            })
+        }else{
+            alert('Please enter a Task')
+        }
+
+        router.refresh()
         setNewTaskValue('')
     }
 
@@ -24,7 +33,8 @@ export default function AddTask() {
             </button>
             <Modal modalOpen={modalOpen} setModalOpen={setModalOpen}>
                 <form onSubmit={handleSubmitNewTask}>
-                    <h3 className='text-2xl font-bold'>Add new Task</h3>
+                    <button className='flex justify-end w-full' onClick={() => setModalOpen(false)}>X</button>
+                    <h3 className=' flex justify-center text-2xl font-bold'>Add new Task</h3>
                     <div className="modal-action">
                         <input type="text" placeholder="Type here"
                                className="input input-bordered input-primary mr-5 w-full max-w-xs"

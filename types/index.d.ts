@@ -7,5 +7,5 @@ export type TableHeaderConfig = {
 export type TaskConfig={
     id: string
     task : string
-    status : string
+    status :boolean
 }

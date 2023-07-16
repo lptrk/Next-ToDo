@@ -8,20 +8,21 @@ interface ToDoListProps {
 }
 
 export const ToDoList: React.FC<ToDoListProps> = ({tasks}) => {
+
     return (
         <>
-            <div className="">
-                <table className="table bg-slate-700">
+            <div className='flex justify-center'>
+                <table className="w-[60rem] table bg-slate-700">
                     {/* head */}
                     <thead>
-                    <tr>
-                        <th>{tableHeaderConfig.name}</th>
-                        <th>{tableHeaderConfig.status}</th>
+                    <tr className='w-[40rem]'>
+                        <th className='w-[30rem]'>{tableHeaderConfig.name}</th>
+                        <th className='sm: w-[5rem]'>{tableHeaderConfig.status}</th>
                     </tr>
                     </thead>
                     <tbody>
                     {tasks.map((task) => (
-                        <Task key={task.id} task={task}/>
+                        <Task key={task.id} task={task} />
                     ))}
 
                     </tbody>

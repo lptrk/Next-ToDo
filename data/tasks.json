@@ -3,22 +3,12 @@
     {
       "id": "1",
       "task": "Code a ToDo List App",
-      "status": "Not Done"
+      "status": false
     },
     {
-      "id": "2",
-      "task": "Buy Milk",
-      "status": "Not Done"
-    },
-    {
-      "id": "3",
-      "task": "Link Project to Github",
-      "status": "Done"
-    },
-    {
-      "id": "6",
-      "task": "afd",
-      "status": "Not Done"
+      "id": "98e5768d-32a6-4ada-9acf-787dc5d696ed",
+      "task": "Spülmaschine machen",
+      "status":true
     }
   ]
 }
